@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Completa - Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🛍️ Loja Tech</h1>
+    <div class="filtros">
+        <input type="text" id="busca" placeholder="Buscar produto..." onkeyup="filtrar()">
+        <select id="categoria" onchange="filtrar()">
+            <option value="">Todas categorias</option>
+            <option value="gamer">Gamer</option>
+            <option value="celular">Celular</option>
+            <option value="pc">PC</option>
+            <option value="tv">TV</option>
+        </select>
+    </div>
+</header>
+
+<main class="container">
+    <section class="produtos" id="produtos"></section>
+
+    <aside class="carrinho">
+        <h2>🛒 Carrinho</h2>
+        <ul id="listaCarrinho"></ul>
+
+        <div class="checkout">
+            <p id="total">Total: R$ 0</p>
+
+            <p>Pagamento via PIX:</p>
+            <div style="display:flex; gap:10px;">s
+                <input type="text" id="pixLink" value="SEU-CODIGO-PIX-AQUI" readonly>
+                <button onclick="copiarPix()">Copiar</button>
+            </div>
+
+            
+            <button onclick="confirmarPagamento()">Já paguei</button>
+
+            <button onclick="finalizarCompra()">Finalizar Compra</button>
+            <p id="troco"></p>
+        </div>
+    </aside>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
